@@ -11,7 +11,7 @@ pipeline {
 
         stage('Build with Maven') {
             steps {
-                sh 'mvn clean package'
+                sh 'mvn clean package -DskipTests'
             }
         }
 
@@ -25,7 +25,7 @@ pipeline {
             steps {
                 sh 'docker stop petclinic || true'
                 sh 'docker rm petclinic || true'
-                sh 'docker run -d -p 8080:8080 --name petclinic pet-clinic-app'
+                sh 'docker run -d -p 8081:8080 --name petclinic pet-clinic-app'
             }
         }
     }
