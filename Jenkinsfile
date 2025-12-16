@@ -1,10 +1,7 @@
 pipeline {
-    agent {
-        label 'built-in-node'
-    }
+    agent any
 
     stages {
-
         stage('Checkout Code') {
             steps {
                 git branch: 'main',
