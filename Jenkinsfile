@@ -1,5 +1,7 @@
 pipeline {
-    agent any
+    agent {
+        label 'built-in-node'
+    }
 
     stages {
 
@@ -31,4 +33,3 @@ pipeline {
         }
     }
 }
-
